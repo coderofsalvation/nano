@@ -11,6 +11,7 @@ html:
         <hr>
         <template data-key="sub">
           <div>{type}</div>
+          <div>{category.name}</div>
           <div>{type:mytransformer}</div>
           <hr>
         </template>
@@ -27,6 +28,7 @@ js:
        '#items',                                                      // destination
        [{                                                             // data
          name:foo,                                                    // data
+         category: {name:"foo"},                                      // data
          sub:[{type:"bar"}]                                           // data
        }],                                                            // data
        'template#items',                                              // template 
