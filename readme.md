@@ -3,6 +3,8 @@ NANO - Template Engine
 
 [nano.js](https://github.com/trix/nano) with html-templates tag + recursion + transformers thrown into the mix:
 
+html:
+
     <template id="items">
       <div>
         <h2>{name}</h2>
@@ -14,8 +16,9 @@ NANO - Template Engine
         </template>
       </div>
     </template>
-
     <div id="#items"></div>
+
+js:
 
     <script>
       new nanoplus($)
@@ -36,9 +39,12 @@ NANO - Template Engine
 It works exactly like nano except that it has extra wrapperfunctions:
 
 * `$.renderTo( selector,data, template, transformers )`
-* `$.render( template_selector,data )`
-* `$.renderString(template, data)` (nano's original `render()`)
+* `$.render( template_selector,data )` returns string
+* `$.renderString(template_str, data)` (nano's original `render()`) 
 * `$.transformer` associative array with global transformer functions
 
-})
+global transformer example:
 
+  $.transformer.price = function(value,data,key){
+    return value + ' ' + data.currency
+  }
