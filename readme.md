@@ -14,6 +14,7 @@ NANO - Template Engine
         </template>
       </div>
     </template>
+
     <div id="#items"></div>
 
     <script>
@@ -37,6 +38,7 @@ It works exactly like nano except that it has extra wrapperfunctions:
 * `$.renderTo( selector,data, template, transformers )`
 * `$.render( template_selector,data )`
 * `$.renderString(template, data)` (nano's original `render()`)
+* `$.transformer` associative array with global transformer functions
 
 })
 
