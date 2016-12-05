@@ -1,43 +1,42 @@
 NANO - Template Engine
 =============================
 
-***Basic Usage***
+[nano.js](https://github.com/trix/nano) with html-templates tag + recursion + transformers thrown into the mix:
 
-Assuming you have following JSON response:
+   <template id="items">
+     <div>
+       <h2>{name}</h2>
+       <hr>
+       <template data-key="sub">
+         <div>{type}</div>
+         <div>{type:mytransformer}</div>
+         <hr>
+       </template>
+     </div>
+   </template>
+   <div id="#items"></div>
 
-<pre>
-data = {
-  user: {
-    login: "tomek",
-    first_name: "Thomas",
-    last_name: "Mazur",
-    account: {
-      status: "active",
-      expires_at: "2009-12-31"
-    }
-  }
-}
-</pre>
+   <script>
+     new nanoplus($)
 
-you can make:
+     $.renderTo( 
+      '#items',                                                      // destination
+      [{                                                             // data
+        name:foo,                                                    // data
+        sub:[{type:"bar"}]                                           // data
+      }],                                                            // data
+      'template#items',                                              // template 
+      { mytransformer: function(value, data, key){ return "foo" } }  // transformers
+     )
+   </script>
 
-<code>
-  nano("&lt;p&gt;Hello {user.first_name} {user.last_name}! Your account is &lt;strong&gt;{user.account.status}&lt;/strong&gt;&lt;/p&gt;", data)
-</code>
+## Usage 
 
-and you get ready string:
+It works exactly like nano except that it has extra wrapperfunctions:
 
-<code>
-  &lt;p&gt;Hello Thomas Mazur! Your account is &lt;strong&gt;active&lt;/strong&gt;&lt;/p&gt;
-</code>
+* `$.renderTo( selector,data, template, transformers )`
+* `$.render( template_selector,data )`
+* `$.renderString(template, data)` (nano's original `render()`)
 
-Test page: <a href="testPage.html">testPage.html</a>
+})
 
-Simple huh?
-
-***More Advanced Example***
-
-
-Displaying list of twitter search results (JSONP API)
-
-http://jsfiddle.net/UXZDy/86/
