@@ -22,7 +22,7 @@ html:
 js:
 
     <script>
-      new nanoplus($)
+      new nanoplus($) // onetime init
 
       $.renderTo( 
        '#items',                                                      // destination
