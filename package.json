@@ -1,0 +1,19 @@
+{
+  "name": "nanoplus",
+  "version": "1.0.0",
+  "description": "nano.js templatengine extended with html-templates + recursion + transformers thrown into the mix",
+  "main": "nanoplus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderofsalvation/nanoplus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderofsalvation/nanoplus/issues"
+  },
+  "homepage": "https://github.com/coderofsalvation/nanoplus#readme"
+}
