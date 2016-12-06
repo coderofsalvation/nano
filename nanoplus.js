@@ -26,7 +26,7 @@ var nanoplus = function($){
       var variable = key.replace(/:.*/,'') 
       var keys = variable.split("."), v = data[keys.shift()];
       for (var i = 0, l = keys.length; i < l; i++){
-        v = v[keys[i]];
+        v = v && keys && keys[i] ? v[keys[i]] : undefined
         if( typeof v == "function" ) v = v(data)
       }
       if( v && $.transformer[transformer] ) v = $.transformer[transformer](v,data,variable)
