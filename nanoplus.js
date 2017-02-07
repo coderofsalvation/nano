@@ -59,3 +59,9 @@ var nanoplus = function($){
 
 }
 
+if (typeof window === 'undefined') {
+    module.exports = nanoplus 
+} else {
+    window.nanoplus = nanoplus 
+}
+

@@ -1,6 +1,6 @@
 {
   "name": "nanoplus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nano.js templatengine extended with html-templates + recursion + transformers thrown into the mix",
   "main": "nanoplus.js",
   "scripts": {
